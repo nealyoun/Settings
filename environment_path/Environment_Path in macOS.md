@@ -19,6 +19,6 @@ conda init zsh을 실행하고 ~/.zshrc에 들어가 보면 아래와 같은 �
 
 conda init을 실행하지 않고 해당 내용을 ~/.bash_profile에서 복사하여 ~/.zshrc에 추가해 줘도 상관없음
 
-![Environment_Path%20in%20macOS%20055fcfd2935c42339eb239bd54a41982/Screen_Shot_2021-07-23_at_11.43.16_AM.png](Environment_Path%20in%20macOS%20055fcfd2935c42339eb239bd54a41982/Screen_Shot_2021-07-23_at_11.43.16_AM.png)
+<img width="617" alt="Screen_Shot_2021-07-23_at_11 43 16_AM" src="https://user-images.githubusercontent.com/54128055/126733830-c289b46b-d115-4dc5-9027-ded08874b6e7.png">
 
 default가 zsh이라면 터미널/iterm2를 실행시켰을 때 자동으로 conda가 활성화된다.
