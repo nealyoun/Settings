@@ -26,7 +26,26 @@
 
 iTerm 혹은 zsh 둘중 어느 것을 먼저 설치하더라도 상관없다. 하지만 oh-my-zsh는 zsh의 확장판과 같은 개념이기 때문에 zsh가 설치된 환경에서 추가적으로 설치해야한다. (MacOS Catalina 부터는 default로 zsh가 설치되어 있기 때문에 oh-my-zsh만 설치 하면 된다. )
 
-iTerm2는 [여기](https://iterm2.com/)에서 다운받아 설치 하면 된다.
+#### 1. Homebrew 를 이용하여 설치
+
+[Homebrew](https://brew.sh/index_ko) 를 이용하고 있다면 아래의 코드를 terminal에 입력하여 설치
+```bash
+# iterm2 설치
+brew install --cask iterm2
+```
+
+#### 2. iTerm2는 [여기](https://iterm2.com/)에서 다운받아 설치 하면 된다.
+
+![iterm_pre](https://user-images.githubusercontent.com/54128055/192507339-6f1ecf41-761f-4c81-9034-2759e6c6363f.png)
+
+![iterm_pre2](https://user-images.githubusercontent.com/54128055/192507332-e1ef2342-21f3-4c45-a8b9-353515892bc8.png)
+
+아래에서 원하는 정보를 표시하도록 커스텀 할 수 있음
+![iterm_pre3](https://user-images.githubusercontent.com/54128055/192506833-acd9d196-7738-43f6-8597-de079d314dec.png)
+
+---
+
+### 2. Oh-My-Zsh 설치
 
 <img width="480" alt="Screen_Shot_2021-07-22_at_12 57 16_AM" src="https://user-images.githubusercontent.com/54128055/126535900-24550dfa-339a-4cbf-8f6c-9645052510a4.png">
 echo$ 0 를 통해 현재 자신의 default shell를 확인 할 수 있음
@@ -40,8 +59,11 @@ brew install zsh
 # oh-my-zsh install
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
+---
 
-### 2. Color Theme 적용
+### 3. Color Theme 적용
+
+#### agnoster
 
 해당 [링크](https://github.com/mbadolato/iTerm2-Color-Schemes)를 통해 원하는 색상의 테마를 선택하여 적용 할 수 있다.
 
@@ -52,7 +74,7 @@ master.zip을 다운받은 후 Oceanic-Next.itermcolors 파일을 실행하여 �
 iterm2 → preferences → profiles → colors → 오른쪽 하단의 color presets 에서 다운 받은 color theme 을 선택
 
 ![Screen_Shot_2021-07-22_at_1 13 31_AM](https://user-images.githubusercontent.com/54128055/126535874-875a4b61-5680-43c4-b0c7-3321b08b700e.png)
-### 3. iTerm/Terminal theme 적용
+#### iTerm/Terminal theme 적용
 
 terminal 혹은 iterm을 실행시켜 아래의 명령어 중 편한 것을 선택하여 입력
 
@@ -70,7 +92,7 @@ ZSH_THEME = "agnoster" 로 수정해준다
 
 > agnoster theme은 현재 directory에서 Git의 상태가 표시됩니다. 해당 기능은 현재 마스터 브랜치인지 개발 브랜치인지 혹은 커밋을 까먹고 하지 않았는지를 알려줍니다.
 
-### 4. Font 적용
+#### Font 적용
 
 agnoster 테마로 변경하게 되면 폰트가 깨져서 이상하게 보인다. 이를 해결하기 위해 새로운 폰트를 적용시킨다.
 
@@ -87,15 +109,37 @@ iterm2 → preferences → profiles → text → 하단의 font 에서 다운 �
 
 ![Screen_Shot_2021-07-22_at_1 33 00_AM](https://user-images.githubusercontent.com/54128055/126535891-f41ade92-0839-4e3a-b6ef-771d66908884.png)
 
+
+#### powerlevel10k
+
+또 다른 theme 으로 [powerlevel10k](https://github.com/romkatv/powerlevel10k)가 있다
+
+아래의 코드를 터미널에 입력하여 테마를 다운
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+위에서 theme 을 agnoster 로 변경했던 것 처럼
+ZSH_THEME="powerlevel10k/powerlevel10k" 으로 변경한다
+
+이후 iterm2를 완전히 종료하고(cmd+q) 재시작하면
+
+Powerlevel10k configuration wizard 가 실행되고 안내에 따라 원하는 콘솔창으로 만들어가면 된다.
+(Powerlevel10k configuration wizard 내에서 font 또한 설치하고 적용하는 단계가 있으므로 agnoster theme 처럼 별도로 font를 설정할 필요는 없음)
+
+powerlevel10k 테마를 적용하면 아래와 같은 콘솔창을 이용할 수 있다
+![iterm](https://user-images.githubusercontent.com/54128055/192509468-a09f179a-baab-4168-9676-03a657e0bc29.png)
+
 여기까지 했다면 iTerm2 꾸미기는 기본적으로 끝났다
 
-### 5. 추가적인 plugin 설치 및 적용
+---
+
+### 4. 추가적인 plugin 설치 및 적용
 
 Oh-my-zsh를 설치하게 되면 다양한 [플러그인](https://github.com/zsh-users)을 사용할 수 있음.
 
 그 중에서 많은 사람들이 사용하는 zsh-syntax-highlighting와 zsh-autosuggestion을 설치 및 적용
 
-### 5-1. zsh-syntax-highlighting
+### 4-1. zsh-syntax-highlighting
 
 해당 플러그인은 명령어에 highlight를 적용시켜줌으로서 해당 명령어가 올바른지 올바르지 않은지 색상으로 확인이 가능하다.
 
@@ -115,7 +159,7 @@ vi ~/.zshrc
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
-### 5-2. zsh-autosuggestions
+### 4-2. zsh-autosuggestions
 
 해당 플러그인은 명령어 자동완성 기능이다. 명령어 입력 도중 회색 글씨로 추천하는 명령어가 보이게 된다. 타이핑 중 → 방향키를 누르면 자동 완성.
 
@@ -130,7 +174,7 @@ vi ~/.zshrc
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ```
 
-### 5-3. homebrew가 설치되어 있지 않다면
+### 4-3. homebrew가 설치되어 있지 않다면
 
 ex) git clone 으로 zsh-autosuggestions 설치
 
