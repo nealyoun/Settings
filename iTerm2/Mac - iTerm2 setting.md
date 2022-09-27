@@ -181,6 +181,9 @@ ex) git clone 으로 zsh-autosuggestions 설치
 ```bash
 # zsh-autosuggestions 설치
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# zsh-syntax-highlighting 설치
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 위의 코드를 iterm2에서 실행하여 플러그인을 설치하고 ~/.zshrc 로 들어가
